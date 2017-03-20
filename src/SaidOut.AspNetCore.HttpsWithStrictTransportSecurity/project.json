@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0-*",
+
+  "buildOptions": {
+    "xmlDoc": true
+  },
+
+  "title": "SaidOut.AspNetCore.HttpsWithStrictTransportSecurity",
+  "authors": [ "Said Outgajjouft" ],
+  "description": "ASP.NET Core middleware that enforce that https scheme is used and that adds the HTTP Strict Transport (HSTS) header for all HTTP responses to request made using https scheme.",
+  "copyright": "Copyright 2017",
+  "packOptions": {
+    "summary": "",
+    "owners": [ "Said Outgajjouft" ],
+    "tags": [ "ASP.NET Core Middleware", "HTTP Strict Transport", "HSTS", "https" ],
+    "requireLicenseAcceptance": false,
+    "releaseNotes": "Initial release",
+    "repository": {
+      "url": "https://github.com/saidout/saidout-aspnetcore-httpswithstricttransportsecurity",
+      "type": "git"
+    },
+    "projectUrl": "https://github.com/saidout/saidout-aspnetcore-httpswithstricttransportsecurity",
+    "licenseUrl": "https://github.com/saidout/saidout-aspnetcore-httpswithstricttransportsecurity/raw/master/LICENSE",
+    "iconUrl": "https://github.com/saidout/saidout-aspnetcore-httpswithstricttransportsecurity/raw/master/saidout_icon32x32.png"
+  },
+
+  "dependencies": {
+    "Microsoft.AspNetCore.Http.Abstractions": "1.1.1",
+    "Microsoft.AspNetCore.Mvc": "1.1.0",
+    "Saidout.Common": "1.0.1"
+  },
+
+  "frameworks": {
+    "net46": {
+      "dependencies": {
+      }
+    },
+    "net461": {
+      "dependencies": {
+      }
+    },
+    "net462": {
+      "dependencies": {
+      }
+    },
+    "netstandard1.6": {
+      "dependencies": {
+        "NETStandard.Library": "1.6.1"
+      }
+    }
+  }
+}
