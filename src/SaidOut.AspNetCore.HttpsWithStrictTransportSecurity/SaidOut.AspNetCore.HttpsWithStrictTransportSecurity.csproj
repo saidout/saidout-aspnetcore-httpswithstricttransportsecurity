@@ -11,6 +11,9 @@
     <RepositoryUrl>https://github.com/saidout/saidout-aspnetcore-httpswithstricttransportsecurity</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>ASP.NET Core Middleware; HTTP Strict Transport; HSTS; https;</PackageTags>
+
+    <VersionPrefix>1.0.1</VersionPrefix>
+    <PackageReleaseNotes> Added support for netstandard2.0, net472, net471 and net47.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
@@ -27,8 +30,8 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="[1.1.0, 1.1.8]" />
-        <PackageReference Include="Microsoft.AspNetCore.Routing" Version="[1.1.0, 1.1.2]" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="[1.1.0, 1.2)" />
+        <PackageReference Include="Microsoft.AspNetCore.Routing" Version="[1.1.0, 1.2)" />
       </ItemGroup>
     </Otherwise>
   </Choose>
