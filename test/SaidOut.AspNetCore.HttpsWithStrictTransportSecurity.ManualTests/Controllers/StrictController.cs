@@ -10,7 +10,7 @@ namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests.Contro
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok (new { Message = "Ok" });
+            return Ok (new { Message = "Ok", Page = "Strict - Index" });
         }
 
 
@@ -19,7 +19,7 @@ namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests.Contro
         [HttpGetMode(HttpGetMode.RedirectToHttps)]
         public IActionResult Redirect()
         {
-            return Ok(new { Message = "Ok" });
+            return Ok(new { Message = "Ok", Page = "Strict - Redirect" });
         }
     }
 }

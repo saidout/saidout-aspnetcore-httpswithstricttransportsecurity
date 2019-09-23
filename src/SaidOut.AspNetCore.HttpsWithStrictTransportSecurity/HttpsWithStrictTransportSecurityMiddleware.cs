@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
-using SaidOut.Common.Extensions;
+using SaidOut.DataValidation.ParameterGuard.Extensions;
 
 namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity
 {
@@ -28,11 +28,8 @@ namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity
         /// <exception cref="ArgumentNullException">If <paramref name="next"/> or <paramref name="httpsOptions"/> is <c>null</c>.</exception>
         public HttpsWithStrictTransportSecurityMiddleware(RequestDelegate next, HttpsWithHstsOptions httpsOptions, IControllerAttributeSupport controllerAttributeSupport)
         {
-            next.ThrowIfNull(nameof(next));
-            httpsOptions.ThrowIfNull(nameof(httpsOptions));
-
-            _next = next;
-            _httpsOptions = httpsOptions;
+            _next = next.CheckIsNotNull(nameof(next));
+            _httpsOptions = httpsOptions.CheckIsNotNull(nameof(httpsOptions));
             _controllerAttributeSupport = controllerAttributeSupport;
         }
 

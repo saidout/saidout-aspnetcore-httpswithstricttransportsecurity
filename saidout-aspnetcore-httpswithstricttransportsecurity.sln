@@ -1,22 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SaidOut.AspNetCore.HttpsWithStrictTransportSecurity", "src\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.xproj", "{230C0A8D-B3B3-4804-AB9E-E3DED212606E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B5495BA1-E9D8-4FF9-8DB2-0F6FDF0A55F5}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.Tests", "test\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.Tests\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.Tests.xproj", "{877C4437-95B5-466D-B874-358AB737A2A6}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests", "test\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests.xproj", "{93BBC316-9D47-4FA7-9C5C-24795C80F78E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3DC57D4B-E2F1-4D04-A09F-2C65A633A9E5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1085A5B0-D959-4D8E-8C06-BF39E66DE55E}"
 	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
 		LICENSE = LICENSE
 		README.md = README.md
+		saidout_icon32x32.png = saidout_icon32x32.png
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{74CEFA5A-550A-45F7-8E61-2450EDF840A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaidOut.AspNetCore.HttpsWithStrictTransportSecurity", "src\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.csproj", "{B5EBB982-FC4B-4598-A3B3-33813DEC71D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.Tests", "test\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.Tests\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.Tests.csproj", "{DD9D3602-8B58-4520-9CF4-5C5A8F426114}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests", "test\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests\SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests.csproj", "{6876EAB8-00C9-487D-8A3A-EE427DC8AFAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,24 +24,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{230C0A8D-B3B3-4804-AB9E-E3DED212606E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{230C0A8D-B3B3-4804-AB9E-E3DED212606E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{230C0A8D-B3B3-4804-AB9E-E3DED212606E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{230C0A8D-B3B3-4804-AB9E-E3DED212606E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{877C4437-95B5-466D-B874-358AB737A2A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{877C4437-95B5-466D-B874-358AB737A2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{877C4437-95B5-466D-B874-358AB737A2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{877C4437-95B5-466D-B874-358AB737A2A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93BBC316-9D47-4FA7-9C5C-24795C80F78E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93BBC316-9D47-4FA7-9C5C-24795C80F78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93BBC316-9D47-4FA7-9C5C-24795C80F78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93BBC316-9D47-4FA7-9C5C-24795C80F78E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5EBB982-FC4B-4598-A3B3-33813DEC71D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5EBB982-FC4B-4598-A3B3-33813DEC71D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5EBB982-FC4B-4598-A3B3-33813DEC71D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5EBB982-FC4B-4598-A3B3-33813DEC71D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9D3602-8B58-4520-9CF4-5C5A8F426114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9D3602-8B58-4520-9CF4-5C5A8F426114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9D3602-8B58-4520-9CF4-5C5A8F426114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9D3602-8B58-4520-9CF4-5C5A8F426114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6876EAB8-00C9-487D-8A3A-EE427DC8AFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6876EAB8-00C9-487D-8A3A-EE427DC8AFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6876EAB8-00C9-487D-8A3A-EE427DC8AFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6876EAB8-00C9-487D-8A3A-EE427DC8AFAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{877C4437-95B5-466D-B874-358AB737A2A6} = {B5495BA1-E9D8-4FF9-8DB2-0F6FDF0A55F5}
-		{93BBC316-9D47-4FA7-9C5C-24795C80F78E} = {B5495BA1-E9D8-4FF9-8DB2-0F6FDF0A55F5}
+		{DD9D3602-8B58-4520-9CF4-5C5A8F426114} = {74CEFA5A-550A-45F7-8E61-2450EDF840A2}
+		{6876EAB8-00C9-487D-8A3A-EE427DC8AFAB} = {74CEFA5A-550A-45F7-8E61-2450EDF840A2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51F6604F-9636-424C-9172-E14738CB7525}
 	EndGlobalSection
 EndGlobal

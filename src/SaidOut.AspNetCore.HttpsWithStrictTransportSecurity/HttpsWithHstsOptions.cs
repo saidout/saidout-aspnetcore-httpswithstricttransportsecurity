@@ -1,5 +1,5 @@
 ﻿using System;
-using SaidOut.Common.Extensions;
+using SaidOut.DataValidation.ParameterGuard.Extensions;
 
 namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity
 {
@@ -16,14 +16,10 @@ namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity
         /// <exception cref="ArgumentOutOfRangeException">If <paramref name="hstsMaxAgeInSeconds"/> is outside the range of [0, 2 147 483 647] or <paramref name="httpsRedirectPort"/> is outside the range of [-1, 65 535].</exception>
         public HttpsWithHstsOptions(HttpsMode httpsMode, int hstsMaxAgeInSeconds, bool hstsIncludeSubDomains,  int httpsRedirectPort)
         {
-            httpsMode.ThrowIfEnumValueIsNotDefined(nameof(httpsMode));
-            hstsMaxAgeInSeconds.ThrowIfValueIsOutsideRange(0, int.MaxValue, nameof(hstsMaxAgeInSeconds));
-            httpsRedirectPort.ThrowIfValueIsOutsideRange(-1, 65535, nameof(httpsRedirectPort));
-
-            HttpsMode = httpsMode;
-            HstsMaxAgeInSeconds = hstsMaxAgeInSeconds;
+            HttpsMode = httpsMode.CheckIsDefinedInEnum(nameof(httpsMode));
+            HstsMaxAgeInSeconds = hstsMaxAgeInSeconds.CheckIsInsideRange(0, int.MaxValue, nameof(hstsMaxAgeInSeconds));
             HstsIncludeSubDomains = hstsIncludeSubDomains;
-            HttpsRedirectPort = httpsRedirectPort;
+            HttpsRedirectPort = httpsRedirectPort.CheckIsInsideRange(-1, 65535, nameof(httpsRedirectPort)); ;
         }
 
 

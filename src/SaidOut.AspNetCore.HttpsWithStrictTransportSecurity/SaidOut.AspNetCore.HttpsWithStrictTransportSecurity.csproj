@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <Authors>Said Outgajjouft</Authors>
+    <Description>ASP.NET Core middleware that enforce that https scheme is used and that adds the HTTP Strict Transport (HSTS) header for all HTTP responses to request made using https scheme.</Description>
+    <Copyright>© 2017 Said Outgajjouft</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/saidout/saidout-aspnetcore-httpswithstricttransportsecurity</PackageProjectUrl>
+    <PackageIcon>saidout_icon32x32.png</PackageIcon>
+    <RepositoryUrl>https://github.com/saidout/saidout-aspnetcore-httpswithstricttransportsecurity</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>ASP.NET Core Middleware; HTTP Strict Transport; HSTS; https;</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TargetFrameworks>netstandard2.0;netstandard1.6;net472;net471;net47;net462;net461;net46</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition="'$(TargetFramework)' == 'netstandard2.0'">
+      <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="[1.1.0, 1.1.8]" />
+        <PackageReference Include="Microsoft.AspNetCore.Routing" Version="[1.1.0, 1.1.2]" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+  <ItemGroup>
+    <PackageReference Include="SaidOut.DataValidation.ParameterGuard" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="\" />
+    <None Include="../../saidout_icon32x32.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>
