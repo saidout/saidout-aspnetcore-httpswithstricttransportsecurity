@@ -1,9 +1,9 @@
-{
+﻿{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:9797/",
+      "applicationUrl": "http://localhost:5000",
       "sslPort": 44366
     }
   },
@@ -18,9 +18,10 @@
     "SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000",
+      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_HTTPS_PORT": "44366"
       }
     }
   }

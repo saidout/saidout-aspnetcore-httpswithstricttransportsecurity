@@ -11,7 +11,7 @@ namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests.Contro
         [HttpGetMode(HttpGetMode.RedirectToHttps)]
         public IActionResult Index()
         {
-            return Ok(new { Message = "Ok" });
+            return Ok(new { Message = "Ok", Page = "Home - Index" });
         }
     }
 }

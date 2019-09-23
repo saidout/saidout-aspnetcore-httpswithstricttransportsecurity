@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
-using SaidOut.Common.Extensions;
+using SaidOut.DataValidation.ParameterGuard.Extensions;
 using System.Reflection;
 
 namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity
@@ -20,8 +20,7 @@ namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity
         /// <exception cref="ArgumentNullException">If <paramref name="router"/> is <c>null</c>.</exception>
         public RouterControllerAttributeSupport(IRouter router)
         {
-            router.ThrowIfNull(nameof(router));
-            _router = router;
+            _router = router.CheckIsNotNull(nameof(router));
         }
 
 
@@ -35,19 +34,19 @@ namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity
             var routeContext = new RouteContext(context);
             await _router.RouteAsync(routeContext);
             var target = routeContext.Handler?.Target;
-            var actionDescritpion = target?.GetType()
+            var actionDescriptor = target?.GetType()
                 .GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
                 .FirstOrDefault(it => it.FieldType == typeof(Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor))
                 ?.GetValue(target) as Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor;
 
-            if (actionDescritpion == null)
+            if (actionDescriptor == null)
                 return null;
 
-            var actionMethodAttribute = actionDescritpion.MethodInfo.GetCustomAttribute<TAttribute>();
+            var actionMethodAttribute = actionDescriptor.MethodInfo.GetCustomAttribute<TAttribute>();
             if (actionMethodAttribute != null)
                 return actionMethodAttribute;
 
-            return actionDescritpion.ControllerTypeInfo.GetCustomAttribute<TAttribute>();
+            return actionDescriptor.ControllerTypeInfo.GetCustomAttribute<TAttribute>();
         }
     }
 }

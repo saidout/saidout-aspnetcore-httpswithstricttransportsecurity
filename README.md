@@ -7,7 +7,7 @@ ASP.NET Core middleware that enforce that https scheme is used and that adds the
 ## Table of Content
  * [Middleware behavior](#middleware-behavior)
  * [UseHttpsWithHsts parameters](#usehttpswithhsts-parameters)
-   * [Recommendation](#recommendation)
+ * [Recommendation](#recommendation)
  * [Example Code](#example-code)
 
 # Middleware behavior

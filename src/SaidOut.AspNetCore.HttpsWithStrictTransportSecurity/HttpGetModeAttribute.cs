@@ -1,5 +1,5 @@
 ﻿using System;
-using SaidOut.Common.Extensions;
+using SaidOut.DataValidation.ParameterGuard.Extensions;
 
 namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity
 {
@@ -13,9 +13,7 @@ namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity
         /// <param name="mode">The mode determines the desired action for GET request made using http scheme.</param>
         public HttpGetModeAttribute(HttpGetMode mode)
         {
-            mode.ThrowIfEnumValueIsNotDefined(nameof(mode));
-
-            Mode = mode;
+            Mode = mode.CheckIsDefinedInEnum(nameof(mode));
         }
 
 
