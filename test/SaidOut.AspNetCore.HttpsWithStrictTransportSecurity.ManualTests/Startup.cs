@@ -43,7 +43,10 @@ namespace SaidOut.AspNetCore.HttpsWithStrictTransportSecurity.ManualTests
 
             // Note if HttpsMode is set to HttpsMode.Strict then no redirection will be made on GET request using http scheme
             // on action with has the HttpGetModeAttribute with mode set to HttpGetMode.RedirectToHttps.
-            app.UseHttpsWithHsts(HttpsMode.AllowedRedirectForGet, httpsRedirectPort: 44366, configureRoutes: routeAction);
+            var httpsPort = int.TryParse(Configuration["https_port"], out var tmp)
+                ? tmp
+                : 443;
+            app.UseHttpsWithHsts(HttpsMode.AllowedRedirectForGet, httpsRedirectPort: httpsPort, configureRoutes: routeAction);
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
